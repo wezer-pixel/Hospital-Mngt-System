@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DoctorController;
+use App\Models\Doctor;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +60,5 @@ Route::get('/update_doctor/{id}', [AdminController::class, 'update_doctor']);
 
 Route::post('/edit_doctor/{id}', [AdminController::class, 'edit_doctor']);
 
+// doctor reoutes
+Route::get('/doc_appt', [DoctorController::class, 'all_appt']);
