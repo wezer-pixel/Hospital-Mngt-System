@@ -11,18 +11,15 @@ class DoctorController extends Controller
 {
     // show all appointments on the doctor view
     public function all_appt() {
+        if (Auth::check() && Auth::user()->user_type == 2) {
+            $doctor = Auth::user(); // Assuming the authenticated user is a doctor
+            $appointments = Appointment::where('doctor', $doctor->name)->get();
 
-        if(Auth::id()) {
-            if(Auth::user()->user_type == 2) {
-
-                $data = Appointment::all();
-
-                return view('doctor.appt', compact('data'));
-            } else {
-
-                return redirect('login');
-            }
+            return view('doctor.appt', compact('appointments'));
+        } else {
+            return redirect('login');
         }
     }
+
 
 }

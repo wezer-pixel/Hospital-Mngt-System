@@ -30,7 +30,7 @@
                         </thead>
 
                         <tbody>
-                            @foreach ($data as $appoint)
+                            @foreach ($appointments as $appoint)
 
                                 <tr class="border-b bg-slate-200 dark:bg-gray-800 dark:border-gray-700">
                                     <td scope="row" class="px-3 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$appoint->name}}</td>
