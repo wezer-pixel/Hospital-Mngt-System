@@ -62,3 +62,5 @@ Route::post('/edit_doctor/{id}', [AdminController::class, 'edit_doctor']);
 
 // doctor reoutes
 Route::get('/doc_appt', [DoctorController::class, 'all_appt']);
+
+Route::get('appt_details', [DoctorController::class, 'appt_details']);

@@ -21,5 +21,13 @@ class DoctorController extends Controller
         }
     }
 
+    public function appt_details() {
+        if (Auth::check() && Auth::user()->user_type == 2) {
+
+            return view('doctor.apptview');
+        } else {
+            return redirect('login');
+        }
+    }
 
 }
